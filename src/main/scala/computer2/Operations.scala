@@ -125,7 +125,7 @@ case class Output(dataset: List[Int], instructionPointer: Int) extends Operation
 }
 
 case class JumpIfTrue(dataset: List[Int], instructionPointer: Int) extends Operation {
-  private def jumpTo = dataset(instructionPointer + 2)
+  private def jumpTo = secondParam
 
   override def execute(): (List[Int], Int) = {
     if (firstParam != 0) {
@@ -137,7 +137,7 @@ case class JumpIfTrue(dataset: List[Int], instructionPointer: Int) extends Opera
 }
 
 case class JumpIfFalse(dataset: List[Int], instructionPointer: Int) extends Operation {
-  private def jumpTo = dataset(instructionPointer + 2)
+  private def jumpTo = secondParam
 
   override def execute(): (List[Int], Int) = {
     if (firstParam == 0) {
