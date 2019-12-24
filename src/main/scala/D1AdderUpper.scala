@@ -17,7 +17,7 @@ case class Module(mass: Int) {
 object FuelCalculator {
   def calculateFuelRequiredmentForMass(mass: Int): Int = {
     (BigDecimal(mass) / 3)
-      .setScale(0, BigDecimal.RoundingMode.FLOOR).intValue() - 2
+      .setScale(0, BigDecimal.RoundingMode.FLOOR).intValue - 2
   }
 
   def calculateTotalFuelFor(mass:Int): Int = {
